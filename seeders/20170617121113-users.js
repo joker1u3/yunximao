@@ -4,18 +4,20 @@ module.exports = {
   up: function (queryInterface, Sequelize) {
     let users = [{
       id: '00007fc0-6eb8-11e7-8e75-0b631325fe0f',
-      account: 'admin',
-      name: '管理员',
+      account: 'root',
+      name: '系统管理员',
+      role: '1',
       avatar: '/images/avatar/1.jpg',
-      email: 'admin@yxm.com',
+      email: 'root@yxm.com',
       password: '123456',
       password_confirmation: '123456'
     }, {
       id: '0001e890-6db6-11e7-a4d5-3d3a55f920be',
-      account: 'test2',
-      name: '测贰',
+      account: 'yxm_admin',
+      name: '云吸猫',
+      role: '1',
       avatar: '/images/avatar/2.jpg',
-      email: 't2@t.com',
+      email: 'admin@yxm.com',
       password: '123456',
       password_confirmation: '123456'
     }];
