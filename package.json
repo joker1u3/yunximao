@@ -4,13 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "NODE_ENV=development PORT=9001 DEBUG=yunximao:* forever -w ./bin/www"
+    "dev": "NODE_ENV=development PORT=9001 DEBUG=yunximao:* forever -w ./bin/www",
+    "dev:m": "NODE_ENV=development sequelize --config config/config.development.json db:migrate",
+    "dev:seed": "NODE_ENV=development sequelize --config config/config.development.json db:seed:undo:all && NODE_ENV=development sequelize --config config/config.development.json db:seed:all",
+    "pro:m": "NODE_ENV=production sequelize --config config/config.production.json db:migrate",
+    "pro:seed": "NODE_ENV=production sequelize --config config/config.production.json db:seed:undo:all && NODE_ENV=production sequelize db:seed:all"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "~1.17.1",
     "compression": "^1.7.1",
     "cookie-parser": "~1.4.3",
+    "crispy-string": "0.0.2",
     "crypto": "^1.0.1",
     "debug": "~2.6.3",
     "express": "~4.15.2",
